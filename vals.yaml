@@ -1,5 +1,5 @@
 cloneURL: https://github.com/nonokangwei/brigadedemo.git
 namespace: default
-project: brigade/brigadedemo
+project: nonokangwei/brigadedemo
 repository: github.com/nonokangwei/brigadedemo
 sharedSecret: 09879879879879879879879871
