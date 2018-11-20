@@ -33,7 +33,7 @@ events.on("push", function(e, project) {
 events.on("image_push", (e, project) => {
   var docker = JSON.parse(e.payload)
   console.log(docker)
-  var message = "New Build" + docker.target.repository + docker.target.tag + "available!"
+  var message = "New Build " + docker.target.repository + ":"+ docker.target.tag + " available!"
   var slack = new Job("slack-notify", "technosophos/slack-notify:latest", ["/slack-notify"])
   slack.storage.enabled = false
   slack.env = {
