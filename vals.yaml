@@ -6,5 +6,6 @@ sharedSecret: "09879879879879879879879871"
 secrets: {
   DOCKER_USER: "k8sdemoacr",
   DOCKER_PASS: "xxyJ5ON6M4/ur11yl1ta0X6P5g9vZP19",
-  DOCKER_REGISTRY: "k8sdemoacr.azurecr.io"
+  DOCKER_REGISTRY: "k8sdemoacr.azurecr.io",
+  SLACK_WEBHOOK: "https://hooks.slack.com/services/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"
 }
