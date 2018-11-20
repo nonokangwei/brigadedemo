@@ -33,4 +33,15 @@ events.on("push", function(e, project) {
 events.on("image_push", (e, p) => {
   var docker = JSON.parse(e.payload)
   console.log(docker)
+  var message = "New Build" + ${docker.repository} + ${docker.tag} + "available!"
+  var slack = new Job("slack-notify", "technosophos/slack-notify:latest", ["/slack-notify"])
+  slack.storage.enabled = false
+  slack.env = {
+      SLACK_WEBHOOK: project.secrets.SLACK_WEBHOOK, 
+      SLACK_USERNAME: "BrigadeBot",
+      SLACK_TITLE: "Brigade Build Demo",
+      SLACK_MESSAGE: message,
+      SLACK_COLOR: "#0000ff"
+  }
+  slack.run()
 })
