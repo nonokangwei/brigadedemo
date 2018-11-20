@@ -29,3 +29,8 @@ events.on("push", function(e, project) {
  
   docker.run()
 })
+
+events.on("image_push", (e, p) => {
+  var docker = JSON.parse(e.payload)
+  console.log(docker)
+})
