@@ -30,7 +30,7 @@ events.on("push", function(e, project) {
   docker.run()
 })
 
-events.on("image_push", (e, p) => {
+events.on("image_push", (e, project) => {
   var docker = JSON.parse(e.payload)
   console.log(docker)
   var message = "New Build" + docker.repository + docker.tag + "available!"
